@@ -32,7 +32,9 @@ with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-c
 
 data['id'] = data['id'].map(lambda x: f'{x:0>5}')
 
-app = JupyterDash(__name__)
+import dash
+
+app = dash.Dash(__name__)
 app.layout = html.Div([
     html.H1("US map"),
     dcc.Graph(id='graph'),
